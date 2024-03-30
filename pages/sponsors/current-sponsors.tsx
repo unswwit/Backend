@@ -20,6 +20,7 @@ export default function Sponsors({ sponsors }: any) {
   const [currSponsor, setCurrSponsor] = React.useState('');
   const [sourceLoading, setSourceLoading] = React.useState(true);
   const [headerLoading, setHeaderLoading] = React.useState(true);
+  const [currSponsorCategory, setCurrSponsorCategory] = React.useState('All Sponsors');
 
   const tempSponsors = filterSponsors(sponsors);
 
@@ -48,6 +49,29 @@ export default function Sponsors({ sponsors }: any) {
   const fetchSponsors = async () => {
     setSourceLoading(false);
   };
+
+  // const createSponsorTab = (sponsorType, sponsor, index) => {
+  //   const curType = sponsorType.split(' ')[0];
+  //   return <img
+  //     className={`${styles.logo} ${styles[`logo${curType}`]}`}
+  //     src={
+  //       window.matchMedia &&
+  //         window.matchMedia('(prefers-color-scheme: dark)')
+  //           .matches
+  //         ? 'https:' +
+  //         sponsor.fields.darkModeLogo.fields.file.url
+  //         : 'https:' +
+  //         sponsor.fields.lightModeLogo.fields.file.url
+  //     }
+  //     alt={sponsor.fields.name}
+  //     onClick={() => {
+  //       setOpen(true);
+  //       setCurrSponsorType(sponsorType);
+  //       setCurrSponsor(sponsor);
+  //     }}
+  //     key={index}
+  //   />
+  // }
 
   return (
     <div>
@@ -83,25 +107,41 @@ export default function Sponsors({ sponsors }: any) {
             </p>
 
             {/* Start of Sponsors Section */}
-            {Object.keys(tempSponsors).map((sponsorType, index) => {
-              const curType = sponsorType.split(' ')[0];
-
-              return (
-              <div key={index}>
-                <h2 className={styles.subsponsor}>{sponsorType}</h2>
-                <div id={styles.majorContainer}>
-                  {tempSponsors[sponsorType].map((sponsor, index) => (
+            <p className={styles.subsponsor}>{currSponsorCategory}</p>
+            <div id={styles.buttonsContainer}>
+              <button
+                autoFocus
+                onClick={(e) => {
+                  setCurrSponsorCategory("All Sponsors");
+                }}>All Sponsors</button>
+              {Object.keys(tempSponsors).map((sponsorType, index) => {
+                const curType = sponsorType.split(' ')[0];
+                return <button
+                  onClick={() => {
+                    setCurrSponsorCategory(sponsorType);
+                  }}
+                >{curType}</button>
+              })}
+            </div>
+            <div id={styles.majorContainer}>
+              {Object.keys(tempSponsors).map((sponsorType, index) => {
+                const curType = sponsorType.split(' ')[0]
+                return <>{
+                  ((currSponsorCategory !== 'All Sponsors' &&
+                    currSponsorCategory === sponsorType) ||
+                    (currSponsorCategory === 'All Sponsors')) &&
+                  tempSponsors[sponsorType].map((sponsor, index) => (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       className={`${styles.logo} ${styles[`logo${curType}`]}`}
                       src={
                         window.matchMedia &&
-                        window.matchMedia('(prefers-color-scheme: dark)')
-                          .matches
+                          window.matchMedia('(prefers-color-scheme: dark)')
+                            .matches
                           ? 'https:' +
-                            sponsor.fields.darkModeLogo.fields.file.url
+                          sponsor.fields.darkModeLogo.fields.file.url
                           : 'https:' +
-                            sponsor.fields.lightModeLogo.fields.file.url
+                          sponsor.fields.lightModeLogo.fields.file.url
                       }
                       alt={sponsor.fields.name}
                       onClick={() => {
@@ -111,11 +151,11 @@ export default function Sponsors({ sponsors }: any) {
                       }}
                       key={index}
                     />
-                  ))}
-                </div>
-              </div>
-            );
-          })}
+                  ))
+                }
+                </>
+              })}
+            </div>
           </div>
 
           {/* Start of Modal */}

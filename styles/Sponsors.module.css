@@ -9,14 +9,48 @@ p.subheader {
 }
 
 /*----------------------------Sponsor page sponsors---------------------------*/
+
 /*Sponsor tier names*/
-h2.subsponsor {
+.subsponsor {
   font-family: 'Montserrat', sans-serif;
-  font-size: 33pt;
-  text-transform: uppercase;
-  margin-top: 100px;
+  font-size: 40px;
+  margin-top: 80px;
   margin-bottom: 45px;
   text-align: center;
+  color: var(--black);
+  font-weight: 700;
+  line-height: 49px;
+}
+
+/* Sponsor filter buttons */
+#buttonsContainer {
+  margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#buttonsContainer button {
+  font-family: 'Montserrat', sans-serif;
+  width: 213px;
+  height: 66px;
+  border-radius: 30px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  margin: 7px;
+  transition: 0.3s;
+}
+
+#buttonsContainer button:hover {
+  background-color: var(--yellow);
+}
+
+#buttonsContainer button:focus {
+  background-color: var(--yellow);
+  border: none;
 }
 
 /*Sponsor logos*/
@@ -90,6 +124,14 @@ a.subheader {
   a.subheader {
     color: white;
   }
+
+  #buttonsContainer button {
+    color: white;
+  }
+
+  .subsponsor {
+    color: white;
+  }
 }
 
 /*--- Mobile responsiveness ---*/
@@ -146,7 +188,7 @@ a.subheader {
 }
 
 @media only screen and (max-width: 400px) {
-  h2.subsponsor {
+  .subsponsor {
     font-size: 20pt;
   }
 
@@ -164,7 +206,7 @@ a.subheader {
   color: var(--yellow);
   font-size: 19.5px;
   font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   text-align: left;
   margin-top: 60px;
   margin-bottom: 20px;
