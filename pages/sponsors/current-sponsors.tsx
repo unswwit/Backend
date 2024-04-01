@@ -50,29 +50,6 @@ export default function Sponsors({ sponsors }: any) {
     setSourceLoading(false);
   };
 
-  // const createSponsorTab = (sponsorType, sponsor, index) => {
-  //   const curType = sponsorType.split(' ')[0];
-  //   return <img
-  //     className={`${styles.logo} ${styles[`logo${curType}`]}`}
-  //     src={
-  //       window.matchMedia &&
-  //         window.matchMedia('(prefers-color-scheme: dark)')
-  //           .matches
-  //         ? 'https:' +
-  //         sponsor.fields.darkModeLogo.fields.file.url
-  //         : 'https:' +
-  //         sponsor.fields.lightModeLogo.fields.file.url
-  //     }
-  //     alt={sponsor.fields.name}
-  //     onClick={() => {
-  //       setOpen(true);
-  //       setCurrSponsorType(sponsorType);
-  //       setCurrSponsor(sponsor);
-  //     }}
-  //     key={index}
-  //   />
-  // }
-
   return (
     <div>
       <Head>
@@ -111,21 +88,22 @@ export default function Sponsors({ sponsors }: any) {
             <div id={styles.buttonsContainer}>
               <button
                 autoFocus
-                onClick={(e) => {
-                  setCurrSponsorCategory("All Sponsors");
+                onClick={() => {
+                  setCurrSponsorCategory('All Sponsors');
                 }}>All Sponsors</button>
               {Object.keys(tempSponsors).map((sponsorType, index) => {
                 const curType = sponsorType.split(' ')[0];
                 return <button
+                  key={index}
                   onClick={() => {
                     setCurrSponsorCategory(sponsorType);
                   }}
-                >{curType}</button>
+                >{curType}</button>;
               })}
             </div>
             <div id={styles.majorContainer}>
-              {Object.keys(tempSponsors).map((sponsorType, index) => {
-                const curType = sponsorType.split(' ')[0]
+              {Object.keys(tempSponsors).map((sponsorType) => {
+                const curType = sponsorType.split(' ')[0];
                 return <>{
                   ((currSponsorCategory !== 'All Sponsors' &&
                     currSponsorCategory === sponsorType) ||
@@ -153,7 +131,7 @@ export default function Sponsors({ sponsors }: any) {
                     />
                   ))
                 }
-                </>
+                </>;
               })}
             </div>
           </div>
