@@ -20,10 +20,11 @@ p.subheader {
   color: var(--black);
   font-weight: 700;
   line-height: 49px;
+  text-transform: capitalize;
 }
 
 /* Sponsor filter buttons */
-#buttonsContainer {
+#sponsorButtonsContainer {
   margin-bottom: 100px;
   display: flex;
   flex-wrap: wrap;
@@ -31,26 +32,29 @@ p.subheader {
   align-items: center;
 }
 
-#buttonsContainer button {
+#sponsorButtonsContainer button {
   font-family: 'Montserrat', sans-serif;
+  font-size: 12pt;
   width: 213px;
   height: 66px;
   border-radius: 30px;
   text-align: center;
   cursor: pointer;
   border: none;
-  background-color: transparent;
   margin: 7px;
   transition: 0.3s;
 }
 
-#buttonsContainer button:hover {
-  background-color: var(--yellow);
+#sponsorButtonsContainer button:hover {
+  background-color: var(--orange);
 }
 
-#buttonsContainer button:focus {
-  background-color: var(--yellow);
-  border: none;
+.selectedSponsorButton {
+  background-color: var(--orange);
+}
+
+.unselectedSponsorButton {
+  background-color: transparent;
 }
 
 /*Sponsor logos*/
@@ -204,9 +208,9 @@ a.subheader {
 /*----------------------------Sponsor page modal---------------------------*/
 .sponsorType {
   color: var(--yellow);
+  text-transform: capitalize;
   font-size: 19.5px;
   font-family: 'Montserrat', sans-serif;
-  /* text-transform: uppercase; */
   text-align: left;
   margin-top: 60px;
   margin-bottom: 20px;

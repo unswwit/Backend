@@ -84,16 +84,19 @@ export default function Sponsors({ sponsors }: any) {
             </p>
 
             {/* Start of Sponsors Section */}
-            <p className={styles.subsponsor}>{currSponsorCategory}</p>
-            <div id={styles.buttonsContainer}>
+            <h2 className={styles.subsponsor}>{currSponsorCategory}</h2>
+            <div id={styles.sponsorButtonsContainer}>
               <button
-                autoFocus
+                className={currSponsorCategory === 'All Sponsors' ? 
+                styles.selectedSponsorButton : styles.unselectedSponsorButton}
                 onClick={() => {
                   setCurrSponsorCategory('All Sponsors');
                 }}>All Sponsors</button>
               {Object.keys(tempSponsors).map((sponsorType, index) => {
                 const curType = sponsorType.split(' ')[0];
                 return <button
+                  className={currSponsorCategory === sponsorType ? 
+                    styles.selectedSponsorButton : styles.unselectedSponsorButton}
                   key={index}
                   onClick={() => {
                     setCurrSponsorCategory(sponsorType);
@@ -105,9 +108,8 @@ export default function Sponsors({ sponsors }: any) {
               {Object.keys(tempSponsors).map((sponsorType) => {
                 const curType = sponsorType.split(' ')[0];
                 return <>{
-                  ((currSponsorCategory !== 'All Sponsors' &&
-                    currSponsorCategory === sponsorType) ||
-                    (currSponsorCategory === 'All Sponsors')) &&
+                  (currSponsorCategory === sponsorType ||
+                    currSponsorCategory === 'All Sponsors') &&
                   tempSponsors[sponsorType].map((sponsor, index) => (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
