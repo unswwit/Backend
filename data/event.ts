@@ -2,9 +2,11 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   chip: {
-    textTransform: 'uppercase',
-    color: 'white',
+    textTransform: 'capitalize',
+    color: 'black',
     margin: '5px',
+    radius: '30px',
+    width: '204px',
   },
 });
 
@@ -56,4 +58,27 @@ const valueToYear = {
   100: '2024',
 };
 
-export { useStyles, categories, marks, valueToYear };
+const options = [
+  {
+    value: '2024',
+    label: '2024',
+  },
+  {
+    value: '2023',
+    label: '2023',
+  },
+  {
+    value: '2022',
+    label: '2022',
+  },
+  {
+    value: '2021',
+    label: '2021',
+  },
+  {
+    value: '2020',
+    label: '2020',
+  },
+];
+
+export { useStyles, categories, marks, valueToYear, options };

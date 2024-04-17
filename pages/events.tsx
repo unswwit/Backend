@@ -12,10 +12,11 @@ import LoadingScreen from '../components/LoadingScreen';
 import UpcomingEvent from '../components/UpcomingEvent';
 import PaginationComp from '../components/Pagination';
 import { isMobile } from 'react-device-detect';
-import { useStyles, categories, marks, valueToYear } from '../data/event';
+import { useStyles, categories, marks, valueToYear, options } from '../data/event';
 import { loadPastEvents, loadUpcomingEvents } from '../lib/api';
 import Head from 'next/head';
 import { revalidate } from '../lib/helpers/constants';
+import { Button } from 'semantic-ui-react';
 
 const Events = ({ upcomingEvents, allPastEvents }: any) => {
   const classes = useStyles();
@@ -256,9 +257,22 @@ const Events = ({ upcomingEvents, allPastEvents }: any) => {
               />
             )}
             {/* PAST EVENTS */}
-            <h2>PAST EVENTS</h2>
+            <div 
+              id={styles.pastEventsHeaderContainer}>
+              <h2>Past Events</h2>
+              <select
+                onChange={(e) => handleYear(e.target.value)}>
+                  {options.map(key => {
+                    return <option
+                      label={key.label}
+                      value={key.value}>
+                    </option>
+                  })}
+              </select>
+            </div>
             <div className={styles.eventCategories}>
-              <div className={styles.contentCategories}>
+              <div className={styles.contentCategories}
+              id={styles.pastEventsButtonsContainer}>
                 {Object.keys(categories)
                   .sort((a, b) => {
                     if (a === 'Other') return 1;
@@ -266,37 +280,28 @@ const Events = ({ upcomingEvents, allPastEvents }: any) => {
                     return a.localeCompare(b);
                   })
                   .map((category) => {
-                    const chipColour =
-                      selectedCategory === categories[category]
-                        ? '#e85f5c'
-                        : '#7F7F7F';
                     return (
-                      <Chip
-                        key={category}
-                        size="medium"
-                        label={category}
-                        className={classes.chip}
-                        style={{
-                          backgroundColor: chipColour,
-                        }}
+                      <button
+                        className={ selectedCategory === category ? 
+                        styles.selectedPastEventsCategoryButton : 
+                        styles.unselectedPastEventsCategoryButton}
                         onClick={() => {
                           setSelectedCategory(categories[category]);
                           filterContent(categories[category]);
                         }}
-                      />
+                      >{category}</button>
                     );
                   })}
               </div>
 
-              <Timeline
+              {/* <Timeline
                 margin={'3%'}
                 page={'events'}
                 step={25}
                 valueToYear={valueToYear}
                 marks={marks}
                 updateYear={handleYear}
-              />
-
+              /> */}
               <div>
                 {emptyCategory === true && (
                   <p id={styles.emptyMessage}>
