@@ -4,22 +4,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/Events.module.css';
 import PageHeader from '../components/Header';
-import Chip from '@material-ui/core/Chip';
-import Timeline from '../components/Timeline';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import ScrollUpBtn from '../components/ScrollUpBtn';
 import LoadingScreen from '../components/LoadingScreen';
 import UpcomingEvent from '../components/UpcomingEvent';
 import PaginationComp from '../components/Pagination';
 import { isMobile } from 'react-device-detect';
-import { useStyles, categories, marks, valueToYear, options } from '../data/event';
+import { categories, valueToYear, options } from '../data/event';
 import { loadPastEvents, loadUpcomingEvents } from '../lib/api';
 import Head from 'next/head';
 import { revalidate } from '../lib/helpers/constants';
-import { Button } from 'semantic-ui-react';
 
 const Events = ({ upcomingEvents, allPastEvents }: any) => {
-  const classes = useStyles();
   const [year, setYear] = useState(valueToYear[100]);
   const [pastEvents, setPastEvents] = useState({
     term1: [],
@@ -293,15 +289,6 @@ const Events = ({ upcomingEvents, allPastEvents }: any) => {
                     );
                   })}
               </div>
-
-              {/* <Timeline
-                margin={'3%'}
-                page={'events'}
-                step={25}
-                valueToYear={valueToYear}
-                marks={marks}
-                updateYear={handleYear}
-              /> */}
               <div>
                 {emptyCategory === true && (
                   <p id={styles.emptyMessage}>
