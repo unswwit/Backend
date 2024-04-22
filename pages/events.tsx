@@ -258,11 +258,12 @@ const Events = ({ upcomingEvents, allPastEvents }: any) => {
               <h2>Past Events</h2>
               <select
                 onChange={(e) => handleYear(e.target.value)}>
-                  {options.map(key => {
+                  {options.map((key,index) => {
                     return <option
+                      key={index}
                       label={key.label}
                       value={key.value}>
-                    </option>
+                    </option>;
                   })}
               </select>
             </div>
@@ -275,9 +276,10 @@ const Events = ({ upcomingEvents, allPastEvents }: any) => {
                     if (b === 'Other') return -1;
                     return a.localeCompare(b);
                   })
-                  .map((category) => {
+                  .map((category,index) => {
                     return (
                       <button
+                        key={index}
                         className={ selectedCategory === category ? 
                         styles.selectedPastEventsCategoryButton : 
                         styles.unselectedPastEventsCategoryButton}
