@@ -255,6 +255,6 @@ export async function getStaticProps() {
   const blogPreviews = await loadBlogPreviews();
   return {
     props: { recommendations, blogPreviews },
-    revalidate: revalidate
+    revalidate: revalidate,
   };
 }
