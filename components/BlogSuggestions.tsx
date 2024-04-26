@@ -10,19 +10,21 @@ const BlogSuggestions = ({ blogPreviews, category, blogNo }: any) => {
   const selectedBlogs = filteredBlogs.splice(0, 3);
 
   return (
-    <div className={styles.suggestionsContainer}>
-      <h2 className={styles.blogRecommendationsTitle}>MORE FROM WIT</h2>
-      <div>
-        {selectedBlogs.map((individualBlogPreview: any, index: any) => {
-          return (
-            <BlogPreview
-              key={index}
-              individualBlogPreview={individualBlogPreview}
-            />
-          );
-        })}
+    <>
+      <div className={styles.suggestionsContainer}>
+        <h2 className={styles.blogRecommendationsTitle}>MORE FROM WIT</h2>
+        <div className={styles.blogRecommendationsContainer}>
+          {selectedBlogs.map((individualBlogPreview: any, index: any) => {
+            return (
+              <BlogPreview
+                key={index}
+                individualBlogPreview={individualBlogPreview}
+              />
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 export default BlogSuggestions;
