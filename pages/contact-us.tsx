@@ -7,7 +7,7 @@ import LoadingScreen from '../components/LoadingScreen';
 import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
-import profiles from '../data/contact-us'
+import profiles from '../data/contact-us';
 
 const ContactUs = () => {
   const [sourceLoading, setSourceLoading] = useState(true);
@@ -46,8 +46,8 @@ const ContactUs = () => {
                 Looking for Someone Specific?
               </h2>
               <div className={styles.grid}>
-                {profiles.map((profile) => (
-                  <div className={styles.profile}>
+                {profiles.map((profile, index) => (
+                  <div className={styles.profile} key={index}>
                     <Image
                       src={profile.src}
                       alt={profile.alt}
