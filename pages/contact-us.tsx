@@ -38,13 +38,15 @@ const ContactUs = () => {
             title="Contact Us"
             imageLoading={setHeaderLoading}
           />
+
           <div className={styles.form}>
-            <h2 className={styles.inquiry}>Send Through a General Inquiry</h2>
-            <div className={styles.formRight}>
-              <Image
+            {/* <h2 className={styles.inquiry}>Contact Us</h2>
+            <p className={styles.place1}>Fill out this form and we will get in touch with you soon</p> */}
+            {/* <div className={styles.formRight}> */}
+            {/* <Image
                 src={
                   window.matchMedia &&
-                  window.matchMedia('(prefers-color-scheme: dark)').matches
+                    window.matchMedia('(prefers-color-scheme: dark)').matches
                     ? `${'/willow_contact_dark_mode.png'}`
                     : `${'/willow_contact.png'}`
                 }
@@ -52,14 +54,19 @@ const ContactUs = () => {
                 height="415"
                 className={styles.centre}
                 alt="contact us"
-              />
-            </div>
-            <div className={styles.formLeft}>
-              <ContactForm />
-            </div>
+              /> */}
+            {/* </div> */}
+            {/* <div className={styles.formLeft}> */}
+            {/* <div
+              width="10"
+              height="10"
+            > */}
+            {/* <div className={styles.formRight}> */}
+            <ContactForm />
+            {/* </div> */}
           </div>
 
-          <h2 className={styles.contactTeam}>CONTACT OUR TEAM</h2>
+          {/* <h2 className={styles.contactTeam}>CONTACT OUR TEAM</h2>
           <div className={styles.newEmails}>
             <div className={styles.col2}>
               <div className={styles.profile2}>
@@ -166,10 +173,11 @@ const ContactUs = () => {
                 </Link>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
-      )}
-    </div>
+      )
+      }
+    </div >
   );
 };
 

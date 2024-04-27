@@ -3,65 +3,76 @@
 /*Form*/
 .form {
   text-align: center;
-  margin: 50px auto 0 auto;
-  max-width: 80%;
-}
+  float: right;
 
-.inquiry {
-  padding-bottom: 50px;
-}
+  background-color: #FFF7EF;
 
-/*Form left*/
-.formLeft {
-  display: inline-block;
+  border-color: #FEB14B;
+  border-style: solid;
+  border-width: 20px 0px 20px 0px;
+
   width: 40%;
-  height: 100%;
+  height: auto;
+
+  margin: 100px 50px 100px 50px;
+  padding: 100px 50px 100px 50px;
+
+  overflow: hidden;
 }
 
-.formLeft form {
-  float: left;
+.form h2 {
+  color: #313638;
+  font-size: 36px;
+  text-transform: none;
+
+  margin: 0px;
+  padding-bottom: 5px;
+}
+
+.form p {
+  font-size: 16px;
+}
+
+.questions {
   text-align: left;
-  width: 100%;
 }
 
-.formLeft textarea {
-  border-style: none;
-  border-bottom: solid;
-  border-color: var(--grey);
-  border-width: 3px;
-  width: 100%;
-}
-
-.formInput {
-  padding: 5px;
-  padding-left: 0px;
+.formInput,
+.form textarea {
+  padding: 10px;
+  padding-left: 10px;
 
   border-style: none;
-  border-bottom: solid;
-  border-color: var(--general-text);
-  border-width: 3px;
 
-  border-radius: 0px;
   width: 100%;
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  font-size: 12pt;
+  margin-bottom: 20px;
+  margin-top: -5px;
   font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+.submitArea {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 10px 0;
 }
 
 .submitButton {
-  color: #ffffff;
-  background-color: #e85f5c;
   text-align: center;
-  margin: 0px 0px 30px 0px;
-  padding: 12px 10px;
   width: 120px;
-  border: none;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  float: left;
-  font-weight: 500;
+
+  background-color: #F48B01;
+
+  border-color: #D18C2F;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 25px;
+
+  color: #ffffff;
   font-size: 12pt;
+  font-weight: 700;
+  text-transform: none;
+
   transition: 0.3s;
 }
 
@@ -73,6 +84,8 @@ form input.button:hover {
   background-color: var(--yellow);
   color: var(--white);
 }
+
+/*End Form*/
 
 /*Form image*/
 .formRight {
@@ -181,6 +194,7 @@ form input.button:hover {
   .newEmails div.profile2 {
     color: white;
   }
+
   .newEmails div.profile3 {
     color: white;
   }
