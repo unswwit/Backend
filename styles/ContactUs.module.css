@@ -22,7 +22,7 @@
 
 .form h2 {
   color: #313638;
-  font-size: 36px;
+  font-size: 32px;
   text-transform: none;
 
   margin: 0px;
@@ -80,15 +80,52 @@
   background-color: var(--dark-red);
 }
 
-form input.button:hover {
+.form input.button:hover {
   background-color: var(--yellow);
   color: var(--white);
 }
 
 /*End Form*/
 
+/*Team*/
+.grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  gap: 50px;
+
+}
+
+.newEmails {
+  width: 45%;
+  justify-content: left;
+  margin: 100px 50px 100px 50px;
+  height: auto;
+}
+
+.contactTeam {
+  font-size: 32px;
+  text-transform: none;
+}
+
+.profile3 {
+  width: auto;
+  text-align: center;
+}
+
+.newEmails img {
+  height: 50px;
+  width: 50px;
+}
+
+.newEmails a:hover {
+  text-decoration: underline;
+}
+
+/*End Team*/
+
 /*Form image*/
-.formRight {
+/* .formRight {
   width: 50%;
   overflow: hidden;
   float: right;
@@ -96,83 +133,8 @@ form input.button:hover {
 
 .centre {
   object-fit: contain;
-}
+} */
 
-/*Style for the Emails is below*/
-.contactTeam {
-  margin-top: 100px;
-}
-
-.newEmails div.dot {
-  height: 50px;
-  width: 50px;
-  background-color: var(--red);
-  margin-bottom: 25px;
-}
-
-.newEmails img {
-  height: 50px;
-  width: 50px;
-  margin-bottom: 25px;
-}
-
-.newEmails h3 {
-  color: var(--yellow);
-  font-family: 'Playfair Display', serif;
-  font-size: 20pt;
-  font-weight: normal;
-  letter-spacing: 2.5px;
-}
-
-.newEmails a {
-  color: var(--general-text);
-  display: block;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 10pt;
-  padding-bottom: 5px;
-  text-align: left;
-}
-
-.newEmails a:hover {
-  text-decoration: underline;
-}
-
-.newEmails div.col2 {
-  width: 57%;
-  margin-left: 26%;
-  margin-right: auto;
-}
-
-.newEmails div.profile2 {
-  display: inline-block;
-  width: 50%;
-  padding: 30px;
-  float: none;
-  overflow: none;
-  text-align: left;
-}
-
-.newEmails div.col3 {
-  width: 80%;
-  height: auto;
-  margin-left: 12%;
-  margin-right: auto;
-  margin-bottom: 100px;
-}
-
-.newEmails div.profile3 {
-  display: inline-block;
-  width: 33%;
-  padding: 30px;
-  float: none;
-  height: 230px;
-  overflow: none;
-  text-align: left;
-}
-
-.lineBreak {
-  visibility: hidden;
-}
 
 /*--- Dark mode ---*/
 @media (prefers-color-scheme: dark) {

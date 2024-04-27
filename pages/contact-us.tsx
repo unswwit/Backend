@@ -40,36 +40,14 @@ const ContactUs = () => {
           />
 
           <div className={styles.form}>
-            {/* <h2 className={styles.inquiry}>Contact Us</h2>
-            <p className={styles.place1}>Fill out this form and we will get in touch with you soon</p> */}
-            {/* <div className={styles.formRight}> */}
-            {/* <Image
-                src={
-                  window.matchMedia &&
-                    window.matchMedia('(prefers-color-scheme: dark)').matches
-                    ? `${'/willow_contact_dark_mode.png'}`
-                    : `${'/willow_contact.png'}`
-                }
-                width="315"
-                height="415"
-                className={styles.centre}
-                alt="contact us"
-              /> */}
-            {/* </div> */}
-            {/* <div className={styles.formLeft}> */}
-            {/* <div
-              width="10"
-              height="10"
-            > */}
-            {/* <div className={styles.formRight}> */}
             <ContactForm />
-            {/* </div> */}
           </div>
 
-          {/* <h2 className={styles.contactTeam}>CONTACT OUR TEAM</h2>
           <div className={styles.newEmails}>
-            <div className={styles.col2}>
-              <div className={styles.profile2}>
+            <h2 className={styles.contactTeam}>Looking for Someone Specific?</h2>
+            <div className={styles.grid}>
+              {/* <div className={styles.col2}> */}
+              <div className={styles.profile3}>
                 <Image
                   src="/icons/pres-icon.png"
                   alt="pres-icon"
@@ -81,7 +59,7 @@ const ContactUs = () => {
                   president@unswwit.com
                 </Link>
               </div>
-              <div className={styles.profile2}>
+              <div className={styles.profile3}>
                 <Image
                   src="/icons/pres-icon.png"
                   alt="pres-icon"
@@ -93,7 +71,7 @@ const ContactUs = () => {
                   president@unswwit.com
                 </Link>
               </div>
-              <div className={styles.profile2}>
+              <div className={styles.profile3}>
                 <Image
                   src="/icons/sec-icon.png"
                   alt="sec-icon"
@@ -105,7 +83,109 @@ const ContactUs = () => {
                   secretary@unswwit.com
                 </Link>
               </div>
-              <div className={styles.profile2}>
+              <div className={styles.profile3}>
+                <Image
+                  src="/icons/tr-icon.png"
+                  alt="tr-icon"
+                  width="50"
+                  height="50"
+                />
+                <h3>Abigail Joesan Johan</h3>
+                <Link href="mailto:treasurer@unswwit.com">
+                  treasurer@unswwit.com
+                </Link>
+              </div>
+              <div className={styles.profile3}>
+                <Image
+                  src="/icons/ex-icon.png"
+                  alt="ex-icon"
+                  width="50"
+                  height="50"
+                />
+                <h3>Emily Dang</h3>
+                <Link href="mailto:externals@unswwit.com">
+                  externals@unswwit.com
+                </Link>
+              </div>
+              <div className={styles.profile3}>
+                <Image
+                  src="/icons/int-icon.png"
+                  alt="int-icon"
+                  width="50"
+                  height="50"
+                />
+                <h3>Abarna Ravindran</h3>
+                <Link href="mailto:internals@unswwit.com">
+                  internals@unswwit.com
+                </Link>
+              </div>
+              <div className={styles.profile3}>
+                <Image
+                  src="/icons/tech.png"
+                  alt="it-icon"
+                  width="50"
+                  height="50"
+                />
+                <h3>Joanna He</h3>
+                <Link href="mailto:technology@unswwit.com">
+                  technology@unswwit.com
+                </Link>
+              </div>
+              <div className={styles.profile3}>
+                <Image
+                  src="/icons/multi-icon.png"
+                  alt="multi-icon"
+                  width="50"
+                  height="50"
+                />
+                <h3>Chelsea Chaffey</h3>
+                <Link href="mailto:multimedia@unswwit.com">
+                  multimedia@unswwit.com
+                </Link>
+              </div>
+            </div>
+
+          </div>
+
+          {/* <div className={styles.newEmails}>
+            <div className={styles.col2}>
+              <div className={styles.profile3}>
+                <Image
+                  src="/icons/pres-icon.png"
+                  alt="pres-icon"
+                  width="50"
+                  height="50"
+                />
+                <h3>Brianna Kim</h3>
+                <Link href="mailto:president@unswwit.com">
+                  president@unswwit.com
+                </Link>
+              </div>
+              <div className={styles.profile3}>
+                <Image
+                  src="/icons/pres-icon.png"
+                  alt="pres-icon"
+                  width="50"
+                  height="50"
+                />
+                <h3>Vivian Wang</h3>
+                <Link href="mailto:president@unswwit.com">
+                  president@unswwit.com
+                </Link>
+              </div>
+              <div className={styles.profile3}>
+                <Image
+                  src="/icons/sec-icon.png"
+                  alt="sec-icon"
+                  width="50"
+                  height="50"
+                />
+                <h3>Yuhan Zhou</h3>
+                <Link href="mailto:secretary@unswwit.com">
+                  secretary@unswwit.com
+                </Link>
+              </div>
+              <div className={styles.profile3}>
                 <Image
                   src="/icons/tr-icon.png"
                   alt="tr-icon"
