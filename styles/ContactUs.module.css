@@ -1,9 +1,48 @@
 /*------------------------------Contact us body-----------------------------*/
 
+.sections {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 10%;
+  margin: 100px 50px 100px 50px;
+}
+
+/*Team*/
+.grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  column-gap: 50px;
+  row-gap: 50px;
+  padding: 0px 25px 0px 25px;
+}
+
+.contactTeam {
+  font-size: 32px;
+  text-transform: none;
+}
+
+.profile {
+  width: auto;
+  text-align: center;
+  overflow: hidden;
+  overflow-wrap: break-word;
+}
+
+.team img {
+  height: 50px;
+  width: 50px;
+}
+
+.team a:hover {
+  text-decoration: underline;
+}
+
+/*End Team*/
+
 /*Form*/
 .form {
   text-align: center;
-  float: right;
 
   background-color: #FFF7EF;
 
@@ -11,13 +50,10 @@
   border-style: solid;
   border-width: 20px 0px 20px 0px;
 
-  width: 40%;
-  height: auto;
-
-  margin: 100px 50px 100px 50px;
   padding: 100px 50px 100px 50px;
 
   overflow: hidden;
+  overflow-wrap: break-word;
 }
 
 .form h2 {
@@ -87,55 +123,6 @@
 
 /*End Form*/
 
-/*Team*/
-.grid {
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: center;
-  gap: 50px;
-
-}
-
-.newEmails {
-  width: 45%;
-  justify-content: left;
-  margin: 100px 50px 100px 50px;
-  height: auto;
-}
-
-.contactTeam {
-  font-size: 32px;
-  text-transform: none;
-}
-
-.profile3 {
-  width: auto;
-  text-align: center;
-}
-
-.newEmails img {
-  height: 50px;
-  width: 50px;
-}
-
-.newEmails a:hover {
-  text-decoration: underline;
-}
-
-/*End Team*/
-
-/*Form image*/
-/* .formRight {
-  width: 50%;
-  overflow: hidden;
-  float: right;
-}
-
-.centre {
-  object-fit: contain;
-} */
-
-
 /*--- Dark mode ---*/
 @media (prefers-color-scheme: dark) {
   .formInput {
@@ -153,147 +140,29 @@
     border-color: white;
   }
 
-  .newEmails div.profile2 {
-    color: white;
-  }
-
-  .newEmails div.profile3 {
+  .team div.profile {
     color: white;
   }
 }
 
 /*-------------------------------Join us: different screen sizes ------------------------------*/
-@media only screen and (max-width: 1200px) {
-  .newEmails div.profile2 {
-    padding: 25px;
-    text-align: center;
-  }
-
-  .newEmails div.profile3 {
-    padding: 25px;
-    text-align: center;
-  }
-}
-
-@media only screen and (max-width: 1000px) {
-  .formRight {
-    display: initial;
-    float: none;
-  }
-
-  .centre {
-    height: 100%;
-  }
-
-  .formLeft {
-    display: initial;
-    float: none;
-  }
-
-  .formLeft form {
-    margin-bottom: 50px;
-  }
-
-  .newEmails div.col2 {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .newEmails div.col3 {
-    width: 90%;
-    margin-left: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-
-  .newEmails div.profile3 {
-    display: inline-block;
-    width: 50%;
-    padding: 30px;
-    float: none;
-    overflow-wrap: break-word;
-    text-align: center;
-  }
-
-  .newEmails div.profile2 {
-    overflow-wrap: break-word;
-    text-align: center;
-  }
-
-  hr.solid {
-    border-top: 2px solid #bbb;
-  }
-
-  .lineBreak {
-    visibility: visible;
-  }
-
-  .newEmails img {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    text-align: center;
-  }
-
-  .newEmails h3 {
-    text-align: center;
-  }
-
-  .newEmails a {
-    text-align: center;
-  }
-}
-
 @media only screen and (max-width: 910px) {
-  .centre {
-    width: 100%;
-    height: 400px;
-  }
-}
-
-@media only screen and (max-width: 650px) {
-  .centre {
-    height: 300px;
+  .sections {
+    display: inline;
   }
 
-  .newEmails div.profile3 {
-    width: 100%;
-    text-align: center;
+  .grid {
+    column-gap: 25px;
+    row-gap: 50px
   }
 
-  .newEmails div.profile2 {
-    width: 100%;
-    text-align: center;
-  }
-
-  .newEmails div.col2 {
-    width: 90%;
-  }
-
-  .newEmails a {
-    font-size: 16px;
-    text-align: center;
-  }
-
-  .form h2,
-  .contactTeam {
-    font-size: 30px;
-  }
-
-  .form h3 {
-    font-size: 20px;
+  .team {
+    margin: 50px 0px 100px 0px;
   }
 }
 
 @media only screen and (max-width: 300px) {
-  .centre {
-    height: 200px;
-  }
-
   .form {
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 50px 25px 50px 25px;
   }
 }
