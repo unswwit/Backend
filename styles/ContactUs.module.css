@@ -5,6 +5,8 @@
   grid-template-columns: auto auto;
   column-gap: 10%;
   margin: 100px 50px 100px 50px;
+  padding: auto;
+  justify-content: center;
 }
 
 /*Team*/
