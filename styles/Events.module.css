@@ -101,18 +101,25 @@
   color: black;
 }
 
-#pastEventsHeaderContainer select{
-  height: 44px;
-  width: 147px;
-  border-radius: 12px;
-  border-width: 1px;
-  border-color: #D9D9D9;
-  font-size: 20px;
-  font-weight: 400;
+/* #pastEventsHeaderContainer Select{
+  
+  
   margin-bottom: 50px;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: transparent;   
+   
+} */
+
+.pastEventYearselect:hover {
+  border-color: var(--orange);
+}
+
+.pastEventYearselect.Mui-focused {
+  border-color: var(--orange);
+}
+
+.pastEventYearoption.Mui-selected {
+  background-color: var(--orange);
 }
 
 #pastEventsButtonsContainer {

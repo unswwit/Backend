@@ -14,6 +14,8 @@ import { categories, valueToYear, options } from '../data/event';
 import { loadPastEvents, loadUpcomingEvents } from '../lib/api';
 import Head from 'next/head';
 import { revalidate } from '../lib/helpers/constants';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
 
 const Events = ({ upcomingEvents, allPastEvents }: any) => {
   const [year, setYear] = useState(valueToYear[100]);
@@ -112,7 +114,7 @@ const Events = ({ upcomingEvents, allPastEvents }: any) => {
 
     if (isEmpty && loadingPast === false) {
       setEmptyCategory(true);
-      console.error = () => {};
+      console.error = () => { };
     } else {
       setEmptyCategory(false);
     }
@@ -253,36 +255,49 @@ const Events = ({ upcomingEvents, allPastEvents }: any) => {
               />
             )}
             {/* PAST EVENTS */}
-            <div 
+            <div
               id={styles.pastEventsHeaderContainer}>
               <h2>Past Events</h2>
-              <select
-                onChange={(e) => handleYear(e.target.value)}>
-                  {options.map((key,index) => {
-                    return <option
+              <Select
+                value={year}
+                onChange={(e) => handleYear(e.target.value)}
+                displayEmpty
+                inputProps={{ 'aria-label': 'Without label' }}
+                sx={{
+                  width: '147px',
+                  height: '40px',
+                  borderRadius:'12px',
+                  backgroundColor: 'transparent',
+                }}
+                className={styles.pastEventYearselect}
+              >
+                {options.map((key,index) => {
+                    return <MenuItem
+                      className={styles.pastEventYearoption}
                       key={index}
-                      label={key.label}
+                      label={key.value}
                       value={key.value}>
-                    </option>;
+                        <em>{key.value}</em>
+                    </MenuItem>;
                   })}
-              </select>
+              </Select>
             </div>
             <div className={styles.eventCategories}>
               <div className={styles.contentCategories}
-              id={styles.pastEventsButtonsContainer}>
+                id={styles.pastEventsButtonsContainer}>
                 {Object.keys(categories)
                   .sort((a, b) => {
                     if (a === 'Other') return 1;
                     if (b === 'Other') return -1;
                     return a.localeCompare(b);
                   })
-                  .map((category,index) => {
+                  .map((category, index) => {
                     return (
                       <button
                         key={index}
-                        className={ selectedCategory === category ? 
-                        styles.selectedPastEventsCategoryButton : 
-                        styles.unselectedPastEventsCategoryButton}
+                        className={selectedCategory === category ?
+                          styles.selectedPastEventsCategoryButton :
+                          styles.unselectedPastEventsCategoryButton}
                         onClick={() => {
                           setSelectedCategory(categories[category]);
                           filterContent(categories[category]);
