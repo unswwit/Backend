@@ -9,14 +9,52 @@ p.subheader {
 }
 
 /*----------------------------Sponsor page sponsors---------------------------*/
+
 /*Sponsor tier names*/
-h2.subsponsor {
+.subsponsor {
   font-family: 'Montserrat', sans-serif;
-  font-size: 33pt;
-  text-transform: uppercase;
-  margin-top: 100px;
+  font-size: 40px;
+  margin-top: 80px;
   margin-bottom: 45px;
   text-align: center;
+  color: var(--black);
+  font-weight: 700;
+  line-height: 49px;
+  text-transform: capitalize;
+}
+
+/* Sponsor filter buttons */
+#sponsorButtonsContainer {
+  margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#sponsorButtonsContainer button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12pt;
+  width: 213px;
+  height: 66px;
+  border-radius: 30px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  margin: 7px;
+  transition: 0.3s;
+}
+
+#sponsorButtonsContainer button:hover {
+  background-color: var(--orange);
+}
+
+.selectedSponsorButton {
+  background-color: var(--orange);
+}
+
+.unselectedSponsorButton {
+  background-color: transparent;
 }
 
 /*Sponsor logos*/
@@ -90,6 +128,14 @@ a.subheader {
   a.subheader {
     color: white;
   }
+
+  #sponsorButtonsContainer button {
+    color: white;
+  }
+
+  .subsponsor {
+    color: white;
+  }
 }
 
 /*--- Mobile responsiveness ---*/
@@ -146,7 +192,7 @@ a.subheader {
 }
 
 @media only screen and (max-width: 400px) {
-  h2.subsponsor {
+  .subsponsor {
     font-size: 20pt;
   }
 
@@ -162,9 +208,9 @@ a.subheader {
 /*----------------------------Sponsor page modal---------------------------*/
 .sponsorType {
   color: var(--yellow);
+  text-transform: capitalize;
   font-size: 19.5px;
   font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
   text-align: left;
   margin-top: 60px;
   margin-bottom: 20px;

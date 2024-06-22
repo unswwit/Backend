@@ -20,6 +20,7 @@ export default function Sponsors({ sponsors }: any) {
   const [currSponsor, setCurrSponsor] = React.useState('');
   const [sourceLoading, setSourceLoading] = React.useState(true);
   const [headerLoading, setHeaderLoading] = React.useState(true);
+  const [currSponsorCategory, setCurrSponsorCategory] = React.useState('All Sponsors');
 
   const tempSponsors = filterSponsors(sponsors);
 
@@ -83,25 +84,44 @@ export default function Sponsors({ sponsors }: any) {
             </p>
 
             {/* Start of Sponsors Section */}
-            {Object.keys(tempSponsors).map((sponsorType, index) => {
-              const curType = sponsorType.split(' ')[0];
-
-              return (
-              <div key={index}>
-                <h2 className={styles.subsponsor}>{sponsorType}</h2>
-                <div id={styles.majorContainer}>
-                  {tempSponsors[sponsorType].map((sponsor, index) => (
+            <h2 className={styles.subsponsor}>{currSponsorCategory}</h2>
+            <div id={styles.sponsorButtonsContainer}>
+              <button
+                className={currSponsorCategory === 'All Sponsors' ? 
+                styles.selectedSponsorButton : styles.unselectedSponsorButton}
+                onClick={() => {
+                  setCurrSponsorCategory('All Sponsors');
+                }}>All Sponsors</button>
+              {Object.keys(tempSponsors).map((sponsorType, index) => {
+                const curType = sponsorType.split(' ')[0];
+                return <button
+                  className={currSponsorCategory === sponsorType ? 
+                    styles.selectedSponsorButton : styles.unselectedSponsorButton}
+                  key={index}
+                  onClick={() => {
+                    setCurrSponsorCategory(sponsorType);
+                  }}
+                >{curType}</button>;
+              })}
+            </div>
+            <div id={styles.majorContainer}>
+              {Object.keys(tempSponsors).map((sponsorType) => {
+                const curType = sponsorType.split(' ')[0];
+                return <>{
+                  (currSponsorCategory === sponsorType ||
+                    currSponsorCategory === 'All Sponsors') &&
+                  tempSponsors[sponsorType].map((sponsor, index) => (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       className={`${styles.logo} ${styles[`logo${curType}`]}`}
                       src={
                         window.matchMedia &&
-                        window.matchMedia('(prefers-color-scheme: dark)')
-                          .matches
+                          window.matchMedia('(prefers-color-scheme: dark)')
+                            .matches
                           ? 'https:' +
-                            sponsor.fields.darkModeLogo.fields.file.url
+                          sponsor.fields.darkModeLogo.fields.file.url
                           : 'https:' +
-                            sponsor.fields.lightModeLogo.fields.file.url
+                          sponsor.fields.lightModeLogo.fields.file.url
                       }
                       alt={sponsor.fields.name}
                       onClick={() => {
@@ -111,11 +131,11 @@ export default function Sponsors({ sponsors }: any) {
                       }}
                       key={index}
                     />
-                  ))}
-                </div>
-              </div>
-            );
-          })}
+                  ))
+                }
+                </>;
+              })}
+            </div>
           </div>
 
           {/* Start of Modal */}

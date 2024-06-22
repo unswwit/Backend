@@ -5,7 +5,7 @@ import Timeline from '../components/Timeline';
 import Image from 'next/image';
 
 export default function OppositeContentTimeline() {
-  const [year, setYear] = useState(valueToYear[249.6]);
+  const [year, setYear] = useState(valueToYear[249.9]);
   const handleYear = (newYear: any) => {
     setYear(newYear);
   };
@@ -15,7 +15,7 @@ export default function OppositeContentTimeline() {
       <Timeline
         id={styles.timelineStyle}
         page={'ourStory'}
-        step={41.6}
+        step={35.7}
         valueToYear={valueToYear}
         marks={marks}
         updateYear={handleYear}
@@ -82,6 +82,35 @@ export default function OppositeContentTimeline() {
                 awarded to the society which makes the highest contribution to
                 student life by supporting, developing and representing
                 students.
+              </li>
+            </ul>
+          ) : year === '2023' ? (
+            <ul>
+              <li>
+                Awarded ARC On Campus Activity of the Year, for our 
+                &apos;Plant Your Creativity&apos; social event
+              </li>
+              <li>
+                Improved automation of internal systems, such as our website updates
+              </li>
+              <li>
+                Had the largest subcommittee team in WIT&apos;s history
+              </li>
+              <li>
+                Continuation of our flagship initiatives
+              </li>
+              <li>
+                Record breaking number of attendees at our Annual Networking Night
+              </li>
+              <li>
+                Focused on quality over quantity for events, hosting a total of 
+                18 in-person at a variety of venues, including sponsor offices, 
+                university campus and private venues
+              </li>
+              <li>
+                Increased our Instagram base by 45%, achieving a near 1K audience,
+                our LinkedIn followers by 23% to 1664, and achieved a milestone 
+                of over 3600 followers on Facebook
               </li>
             </ul>
           ) : (

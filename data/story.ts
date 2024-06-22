@@ -1,32 +1,37 @@
 // position of the marks on the timeline (i.e. 250 indicates that it's on the right end)
 const marks = [
   {
-    value: 249.6,
+    value: 249.9,
+    scaledValue: 2023,
+    label: '2023',
+  },
+  {
+    value: 214.2,
     scaledValue: 2022,
     label: '2022',
   },
   {
-    value: 208,
+    value: 178.5,
     scaledValue: 2021,
     label: '2021',
   },
   {
-    value: 166.4,
+    value: 142.8,
     scaledValue: 2020,
     label: '2020',
   },
   {
-    value: 124.8,
+    value: 107.1,
     scaledValue: 2019,
     label: '2019',
   },
   {
-    value: 83.2,
+    value: 71.4,
     scaledValue: 2018,
     label: '2018',
   },
   {
-    value: 41.6,
+    value: 35.7,
     scaledValue: 2017,
     label: '2017',
   },
@@ -39,12 +44,13 @@ const marks = [
 
 const valueToYear = {
   0: '2016',
-  41.6: '2017',
-  83.2: '2018',
-  124.8: '2019',
-  166.4: '2020',
-  208: '2021',
-  249.6: '2022',
+  35.7: '2017',
+  71.4: '2018',
+  107.1: '2019',
+  142.8: '2020',
+  178.5: '2021',
+  214.2: '2022',
+  249.9: '2023',
 };
 
 let pageToValue = (page: string) => {
@@ -61,6 +67,7 @@ const timelinePhoto = {
   2020: '/our-story/timelinePhotos/2020.jpg',
   2021: '/our-story/timelinePhotos/2021.jpg',
   2022: '/our-story/timelinePhotos/2022.jpg',
+  2023: '/our-story/timelinePhotos/2023.jpg',
 };
 
 export { marks, valueToYear, pageToValue, timelinePhoto };
