@@ -29,7 +29,6 @@ import { revalidate } from '../lib/helpers/constants';
 const Home = ({
   latestPubs,
   latestBlog,
-  nextEvent,
   latestEvent,
   latestPodcast,
   execQuotes,
