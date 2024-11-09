@@ -157,7 +157,7 @@ const Home = ({
             data-aos={isMobile ? 'fade' : 'fade-up'}
             className={styles.beenUpTo}
           >
-            <h1>SEE WHAT WE'VE BEEN UP TO</h1>
+            <h1>SEE WHAT WE&apos;VE BEEN UP TO</h1>
             <div className={styles.eventsDiv}>
               <div className={styles.eventCards}>
                 <EventsSection

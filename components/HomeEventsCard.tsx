@@ -66,7 +66,7 @@ const EventsSection = (props: any) => {
           WIT posts biweekly blogs with industry advice,
           tech trends, and study tips to inspire students
           beyond university. Each week, #WITCrushWednesday
-          highlights pioneering women making an impact in STEM."
+          highlights pioneering women making an impact in STEM.
         </p>
         <div className={styles.buttonContainer}>
           <Link href="media/blog" className={styles.button}>
