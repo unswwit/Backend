@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 import PubArticle from '../components/PublicationsArticle';
-import InitiativesSlideshow from '../components/InitiativesSlideshow';
+import EventsSection from '../components/HomeEventsCard';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Aos from 'aos';
 import { isMobile } from 'react-device-detect';
@@ -152,19 +152,23 @@ const Home = ({
             </div>
           </div>
           {/* End of Statistics */}
-          {/* Start of Upcoming Events / Latest blog / Latest podcast*/}
+          {/* Start of What we've been up to */}
           <div
             data-aos={isMobile ? 'fade' : 'fade-up'}
-            data-aos-delay="150"
-            className={styles.carousel}
+            className={styles.beenUpTo}
           >
-            <InitiativesSlideshow
-              latestBlog={latestBlog}
-              nextEvent={nextEvent}
-              latestEvent={latestEvent}
-              latestPodcast={latestPodcast}
-            />
+            <h1>SEE WHAT WE'VE BEEN UP TO</h1>
+            <div className={styles.eventsDiv}>
+              <div className={styles.eventCards}>
+                <EventsSection
+                latestEvent={latestEvent}
+                latestBlog={latestBlog}
+                latestPodcast={latestPodcast}
+                />
+              </div>
+            </div>
           </div>
+          {/* End of What we've been up to */}
           {/* Start of Publications */}
           <div
             data-aos={isMobile ? 'fade' : 'fade-up'}

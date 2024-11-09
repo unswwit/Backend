@@ -1,6 +1,5 @@
 // @ts-nocheck comment
 import { loadBlogPreviews, loadBlogRecommendations } from '../../lib/api';
-import BlogRecommendations from '../../components/BlogRecommendations';
 import styles from '../../styles/Blog.module.css';
 import React, { useState, useEffect } from 'react';
 import BlogPreview from '../../components/BlogPreview';

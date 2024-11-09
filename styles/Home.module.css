@@ -640,6 +640,39 @@ div .headline {
   }
 }
 
+/*--------------What we've been up to-------------------*/
+.beenUpTo {
+  text-align: center;
+  margin: auto;
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+
+.beenUpTo h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 55px;
+  letter-spacing: 3px;
+  line-height: 100px;
+  text-align: center;
+  margin: 0px;
+  line-height: normal;
+}
+
+.beenUpTo .eventsDiv {
+  margin: 30px auto;
+  padding: 20px; 
+  width: 90%;
+}
+
+.eventCards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  gap: 40px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 /*-----------------------------Responsive Mobile Design--------------------------*/
 @media only screen and (max-width: 1200px) {
   .number {
