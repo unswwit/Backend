@@ -159,11 +159,11 @@ const Home = ({
             <h1>SEE WHAT WE&apos;VE BEEN UP TO</h1>
             <div className={styles.eventsDiv}>
               <div className={styles.eventCards}>
-                <EventsSection
-                latestEvent={latestEvent}
-                latestBlog={latestBlog}
-                latestPodcast={latestPodcast}
-                />
+                  <EventsSection
+                  latestEvent={latestEvent}
+                  latestBlog={latestBlog}
+                  latestPodcast={latestPodcast}
+                  />
               </div>
             </div>
           </div>
