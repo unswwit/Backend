@@ -38,7 +38,7 @@ const EventsSection = (props: any) => {
           </p>
         </div>
         <div className={styles.buttonContainer}>
-          <Link href="/events" className={styles.button}>
+          <Link href="/events" className={styles.linkButton}>
             See more Events
           </Link>
         </div>
@@ -73,7 +73,7 @@ const EventsSection = (props: any) => {
           </p>
         </div>
         <div className={styles.buttonContainer}>
-          <Link href="media/blog" className={styles.button}>
+          <Link href="media/blog" className={styles.linkButton}>
             See more Blogs
           </Link>
         </div>
@@ -106,7 +106,7 @@ const EventsSection = (props: any) => {
           </p>
         </div>
         <div className={styles.buttonContainer}>
-          <Link href="media/podcast" className={styles.button}>
+          <Link href="media/podcast" className={styles.linkButton}>
             See more Episodes
           </Link>
         </div>

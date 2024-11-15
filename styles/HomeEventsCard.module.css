@@ -68,7 +68,7 @@
   text-align: center;
 }
 
-.button {
+.linkButton {
 	background-color: #e74c3c;
 	color: white;
 	padding: 12px 20px;
@@ -80,8 +80,8 @@
   margin-top: 50px;
 }
   
-.card-button:hover {
-	background-color: #c0392b;
+.linkButton:hover {
+	background-color: #D64745;
 }
 
 /* ------------ Responsive mobile design ------------ */
