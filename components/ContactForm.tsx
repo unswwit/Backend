@@ -43,44 +43,53 @@ const ContactForm = () => {
     <form
       method="post"
       encType="text/plain"
-      className={styles.formStyle}
       onSubmit={sendEmail}
     >
-      <input
-        className={styles.formInput}
-        type="text"
-        name="name"
-        placeholder="Full Name*"
-        required
-      />
+      <h2>Contact Us</h2>
+      <p>Fill out this form and we will get in touch with you soon</p>
       <br />
-      <br />
-      <input
-        className={styles.formInput}
-        type="text"
-        name="email"
-        placeholder="Email Address*"
-        required
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <br />
-      <br />
-      <textarea
-        className={styles.formInput}
-        name="message"
-        placeholder="Message*"
-        rows={5}
-        required
-      />
-      <br />
-      <ReCAPTCHA
-        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-        onChange={sendEmail}
-      />
-      {/* TODO: add functionality to reset recaptcha check after form submission */}
-      <br />
-      <input type="submit" className={styles.submitButton} value="Submit" />
+
+      <div className={styles.questions}>
+        <p>Name</p>
+        <input
+          className={styles.formInput}
+          type="text"
+          name="name"
+          placeholder="Jane Doe"
+          required
+        />
+        <p>Email</p>
+        <input
+          className={styles.formInput}
+          type="text"
+          name="email"
+          placeholder="jane.doe@email.com"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <p>Enquiry</p>
+        <textarea
+          className={styles.formInput}
+          name="enquiry"
+          placeholder="How can we help you?"
+          rows={7}
+          required
+        />
+        <br />
+      </div>
+
+      <div className={styles.submitArea}>
+        <ReCAPTCHA
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+          onChange={sendEmail}
+        />
+        {/* TODO: add functionality to reset recaptcha check after form submission */}
+        <br />
+      </div>
+      <div className={styles.submitArea}>
+        <input type="submit" className={styles.submitButton} value="Submit" />
+      </div>
     </form>
   );
 };

@@ -116,22 +116,24 @@ export default function OppositeContentTimeline() {
           ) : (
             <ul>
               <li>
-                Awarded Arc Development Program of the year for our flagship
-                Empowerment Mentoring Program
+              WIT introduced 5 new portfolios - Media, Publications, 
+              Careers, Socials and Competitions.
               </li>
               <li>
-                Restructured and introduced VP Externals, VP Internals, VP
-                Multimedia, VP Technology{' '}
+              Our student base grew to 3000+ students by the end of 2021.
               </li>
-              <li>Sponsorship base grew to 28 sponsors</li>
+              <li>Our sponsorship base more than doubled to 23 sponsors.</li>
               <li>
-                Produced 37 multimedia publications including blogs, podcasts,
-                videos and flagship publications which amassed a reach of 22.1k
-                over 2022
+              Hosted 39 events, reaching 17.3k people and achieving 
+              a 60% increase since 2020.
               </li>
               <li>
-                Held 22 events including our flagship events, workshops,
-                networking nights and competitions
+              Produced 39 publications including podcasts, WCW, flagship 
+              publications which have amassed over 4340 views/ read/ listens.
+              </li>
+              <li>
+              Published Careers guide which reached 1050+ reads, 
+              1100+ impressions and was read in 10 different countries.
               </li>
             </ul>
           )}

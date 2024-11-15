@@ -13,8 +13,9 @@ import React, { useEffect } from 'react';
 import BlogSuggestions from '../../../components/BlogSuggestions';
 
 const BlogDetails = ({ selectedBlog, blogContent }: any) => {
-  const { date, heading, blog_no, category, content, author } =
+  const { date, heading, blog_no, category, content, author, img } =
     selectedBlog.fields;
+  const imgUrl = 'https:' + img.fields.file.url;
   const classes = useStyles();
   const [loading, setLoading] = React.useState(true);
   const [headerLoading, setHeaderLoading] = React.useState(true);
@@ -40,9 +41,11 @@ const BlogDetails = ({ selectedBlog, blogContent }: any) => {
             title={'Blog Post #' + blog_no}
           />
           <div className={styles.document}>
-            <p className={styles.date}>{formatDate(date)}</p>
             <h2 className={styles.heading}>{heading}</h2>
-
+            <p className={styles.date}>{formatDate(date)}</p>
+            <div className={styles.coverImgContainer}>
+              <img className={styles.coverImg} src={imgUrl} alt="preview" />
+            </div>
             <div className={styles.authorContainer}>
               {Object.keys(author).map((index) => (
                 <>
