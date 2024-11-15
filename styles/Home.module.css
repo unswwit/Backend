@@ -640,6 +640,42 @@ div .headline {
   }
 }
 
+/*--------------What we've been up to-------------------*/
+.beenUpTo {
+  text-align: center;
+  margin: auto;
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+
+.beenUpTo h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 55px;
+  letter-spacing: 3px;
+  line-height: 100px;
+  text-align: center;
+  margin: 0px;
+  line-height: normal;
+}
+
+.beenUpTo .eventsDiv {
+  margin: 0px auto;
+  padding: 20px; 
+  width: 90%;
+}
+
+.homeEventCards div {
+  margin: 0;
+}
+
+.eventCards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 0 auto;
+}
+
 /*-----------------------------Responsive Mobile Design--------------------------*/
 @media only screen and (max-width: 1200px) {
   .number {
@@ -656,6 +692,15 @@ div .headline {
 @media only screen and (max-width: 1065px) {
   .publications .homeArticles {
     padding: 15px 15px 15px 15px;
+    display: inline-block;
+  }
+
+  .beenUpTo .eventsDiv {
+    width: 100%;
+  }
+
+  .beenUpTo .eventCards {
+    padding: 15px 5px 15px 5px;
     display: inline-block;
   }
 }
@@ -756,13 +801,6 @@ div .headline {
 @media only screen and (max-width: 946px) {
   .eventsDescription .left p {
     font-size: 14px;
-  }
-}
-
-@media only screen and (max-width: 1065px) {
-  .publications .homeArticles {
-    padding: 15px 15px 15px 15px;
-    display: inline-block;
   }
 }
 
@@ -962,6 +1000,21 @@ div .headline {
 
   .publications .articlesDiv {
     margin-top: 15px;
+  }
+
+  .beenUpTo h1 {
+    font-size: 9vw;
+  }
+
+  .beenUpTo .eventsDiv {
+    margin-top: 5px;
+
+  }
+
+  .beenUpTo .eventCards {
+    margin: 0px;
+    gap: 50px;
+    width: 100%; 
   }
 
   .titleMobile h1 {
