@@ -4,21 +4,20 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/Events.module.css';
 import PageHeader from '../components/Header';
-import Chip from '@material-ui/core/Chip';
-import Timeline from '../components/Timeline';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import ScrollUpBtn from '../components/ScrollUpBtn';
 import LoadingScreen from '../components/LoadingScreen';
 import UpcomingEvent from '../components/UpcomingEvent';
 import PaginationComp from '../components/Pagination';
 import { isMobile } from 'react-device-detect';
-import { useStyles, categories, marks, valueToYear } from '../data/event';
+import { categories, valueToYear, options } from '../data/event';
 import { loadPastEvents, loadUpcomingEvents } from '../lib/api';
 import Head from 'next/head';
 import { revalidate } from '../lib/helpers/constants';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
 
 const Events = ({ upcomingEvents, allPastEvents }: any) => {
-  const classes = useStyles();
   const [year, setYear] = useState(valueToYear[100]);
   const [pastEvents, setPastEvents] = useState({
     term1: [],
@@ -115,7 +114,7 @@ const Events = ({ upcomingEvents, allPastEvents }: any) => {
 
     if (isEmpty && loadingPast === false) {
       setEmptyCategory(true);
-      console.error = () => {};
+      console.error = () => { };
     } else {
       setEmptyCategory(false);
     }
@@ -256,47 +255,57 @@ const Events = ({ upcomingEvents, allPastEvents }: any) => {
               />
             )}
             {/* PAST EVENTS */}
-            <h2>PAST EVENTS</h2>
+            <div
+              id={styles.pastEventsHeaderContainer}>
+              <h2>Past Events</h2>
+              <Select
+                value={year}
+                onChange={(e) => handleYear(e.target.value)}
+                displayEmpty
+                inputProps={{ 'aria-label': 'Without label' }}
+                sx={{
+                  width: '147px',
+                  height: '40px',
+                  borderRadius:'12px',
+                  backgroundColor: 'transparent',
+                }}
+                className={styles.pastEventYearselect}
+              >
+                {options.map((key,index) => {
+                    return <MenuItem
+                      className={styles.pastEventYearoption}
+                      key={index}
+                      label={key.value}
+                      value={key.value}>
+                        <em>{key.value}</em>
+                    </MenuItem>;
+                  })}
+              </Select>
+            </div>
             <div className={styles.eventCategories}>
-              <div className={styles.contentCategories}>
+              <div className={styles.contentCategories}
+                id={styles.pastEventsButtonsContainer}>
                 {Object.keys(categories)
                   .sort((a, b) => {
                     if (a === 'Other') return 1;
                     if (b === 'Other') return -1;
                     return a.localeCompare(b);
                   })
-                  .map((category) => {
-                    const chipColour =
-                      selectedCategory === categories[category]
-                        ? '#e85f5c'
-                        : '#7F7F7F';
+                  .map((category, index) => {
                     return (
-                      <Chip
-                        key={category}
-                        size="medium"
-                        label={category}
-                        className={classes.chip}
-                        style={{
-                          backgroundColor: chipColour,
-                        }}
+                      <button
+                        key={index}
+                        className={selectedCategory === category ?
+                          styles.selectedPastEventsCategoryButton :
+                          styles.unselectedPastEventsCategoryButton}
                         onClick={() => {
                           setSelectedCategory(categories[category]);
                           filterContent(categories[category]);
                         }}
-                      />
+                      >{category}</button>
                     );
                   })}
               </div>
-
-              <Timeline
-                margin={'3%'}
-                page={'events'}
-                step={25}
-                valueToYear={valueToYear}
-                marks={marks}
-                updateYear={handleYear}
-              />
-
               <div>
                 {emptyCategory === true && (
                   <p id={styles.emptyMessage}>

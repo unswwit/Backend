@@ -84,36 +84,115 @@
 }
 
 /*------------------------------Past Events--------------------------------*/
+#pastEventsHeaderContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 58px;
+  align-items: baseline;
+}
+
+#pastEventsHeaderContainer h2 {
+  line-height: 48.76px;
+  font-size: 40px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: capitalize;
+  color: black;
+}
+
+/* #pastEventsHeaderContainer Select{
+  
+  
+  margin-bottom: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+   
+} */
+
+.pastEventYearselect:hover {
+  border-color: var(--orange);
+}
+
+.pastEventYearselect.Mui-focused {
+  border-color: var(--orange);
+}
+
+.pastEventYearoption.Mui-selected {
+  background-color: var(--orange);
+}
+
+#pastEventsButtonsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .pastEventsContainer {
   margin: 0% 2.5%;
 }
 
 .pastEventsContainer h3 {
-  margin-top: 30px;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 33px;
   color: var(--black);
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+#pastEventsButtonsContainer button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12pt;
+  border-radius: 30px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  margin: 7px;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+#pastEventsButtonsContainer button:hover {
+  background-color: var(--orange);
+}
+
+.selectedPastEventsCategoryButton {
+  background-color: var(--orange);
+  color: white;
+}
+
+.unselectedPastEventsCategoryButton {
+  background-color: transparent;
+  color: black;
+  font-weight: 400;
 }
 
 .gridContainer {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, 350px);
   grid-gap: 20px;
 }
 
 .pastEvent {
   position: relative;
-  width: 100%;
+  width: 350px;
   height: 100%;
+  align-self: center;
 }
 
 .darkOverlay {
   width: 100%;
-  height: calc(100% - 4px);
+  height: 100%;
   background-color: var(--black);
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
   transition: opacity 0.5s ease;
+  border-radius: 12px;
 }
 
 .pastEvent:hover {
@@ -129,19 +208,26 @@
 }
 
 .eventImages {
-  max-width: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
+  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  border-radius: 12px;
+}
+
+.eventImages img {
+  object-fit: cover;
+  height: 183px; 
 }
 
 /*--- Dark mode ---*/
 @media (prefers-color-scheme: dark) {
+  #pastEventsHeaderContainer select{
+    color: white
+  }
   .pastEventsContainer h3 {
     color: var(--white);
   }
@@ -157,6 +243,12 @@
   }
   #emptyMessage {
     color: var(--white);
+  }
+  #pastEventsHeaderContainer h2 {
+    color:white
+  }
+  #pastEventsButtonsContainer button {
+    color:white
   }
 }
 
